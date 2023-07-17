@@ -4,6 +4,7 @@ import Create from "@mui/icons-material/Create";
 import { InputAdornment } from "@mui/material";
 import { IconButton } from "@mui/material";
 import { useState } from "react";
+import AddTaskRoundedIcon from '@mui/icons-material/AddTaskRounded';
 
 export default function TodoForm({ addTodo }) {
   const [text, setText] = useState("");
@@ -29,7 +30,8 @@ export default function TodoForm({ addTodo }) {
             endAdornment: (
               <InputAdornment position="end">
                 <IconButton aria-label="create todo" edge="end" type="submit">
-                  <Create />
+                  {/* <Create /> */}
+                  <AddTaskRoundedIcon/>
                 </IconButton>
               </InputAdornment>
             ),

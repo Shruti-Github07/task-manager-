@@ -12,7 +12,16 @@ export default function TodoItem({ todo, remove, toggle }) {
   };
 
   return (
+    // <ListItem
+    //   secondaryAction={
+    //     <IconButton edge="end" aria-label="comments" onClick={removeTodo}>
+    //       <DeleteIcon />
+    //     </IconButton>
+    //   }
+    //   disablePadding
+    // >
     <ListItem
+      sx={{ border: "1px solid gray", borderRadius: "4px", marginBottom: "8px" }} // Add border styling
       secondaryAction={
         <IconButton edge="end" aria-label="comments" onClick={removeTodo}>
           <DeleteIcon />

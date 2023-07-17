@@ -36,13 +36,25 @@ export default function TodoList() {
     });
   };
 
+  // const addTodo = (text) => {
+  //   setTodos((prevTodos) => {
+  //     return [
+  //       ...prevTodos,
+  //       { text: text, id: crypto.randomUUID(), completed: false },
+  //     ];
+  //   });
+  // };
   const addTodo = (text) => {
-    setTodos((prevTodos) => {
-      return [
-        ...prevTodos,
-        { text: text, id: crypto.randomUUID(), completed: false },
-      ];
-    });
+    if (text) { // Check if the text is not empty or null
+      setTodos((prevTodos) => {
+        return [
+          ...prevTodos,
+          { text: text, id: crypto.randomUUID(), completed: false },
+        ];
+      });
+    } else {
+      window.alert("Please enter a todo item."); // Display an alert message
+    }
   };
   return (
     <Box
@@ -54,9 +66,9 @@ export default function TodoList() {
         m: 3,
       }}
     >
-      <Typography variant="h2" component="h1" sx={{ flexGrow: 1 }}>
+      {/* <Typography variant="h2" component="h1" sx={{ flexGrow: 1 }}>
         Todos
-      </Typography>
+      </Typography> */}
       <List sx={{ width: "100%", maxWidth: 360, bgcolor: "background.paper" }}>
         {todos.map((todo) => (
           <TodoItem
@@ -64,6 +76,9 @@ export default function TodoList() {
             key={todo.id}
             remove={removeTodo}
             toggle={() => toggleTodo(todo.id)}
+            sx={{
+              backgroundColor: todo.completed ? "green" : "inherit",
+            }}
           />
         ))}
         <TodoForm addTodo={addTodo} />

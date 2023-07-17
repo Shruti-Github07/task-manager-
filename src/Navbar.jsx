@@ -17,9 +17,11 @@ export default function Navbar() {
             aria-label="menu"
             sx={{ mr: 2 }}
           >
-            <MenuIcon />
           </IconButton>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+          <Typography variant="h6" component="div" sx={{
+            flexGrow: 1,
+            textAlign: "center"
+          }}>
             To-do List App 
           </Typography>
         </Toolbar>
